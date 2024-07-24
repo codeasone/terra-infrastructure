@@ -46,3 +46,15 @@ resource "aws_route_table_association" "public" {
 }
 
 data "aws_region" "current" {}
+
+resource "aws_ssm_parameter" "vpc_id" {
+  name  = "/codeasone/vpc/id"
+  type  = "String"
+  value = aws_vpc.main.id
+}
+
+resource "aws_ssm_parameter" "public_subnet_id" {
+  name  = "/codeasone/subnet/public/a"
+  type  = "String"
+  value = aws_subnet.public.id
+}
