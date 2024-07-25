@@ -4,7 +4,7 @@ resource "aws_vpc" "main" {
   enable_dns_support   = true
 
   tags = {
-    Name = "terra-shared-vpc"
+    Name = "terra-infrastructure-vpc"
   }
 }
 
@@ -12,7 +12,7 @@ resource "aws_internet_gateway" "main" {
   vpc_id = aws_vpc.main.id
 
   tags = {
-    Name = "terra-shared-igw"
+    Name = "terra-infrastructure-igw"
   }
 }
 
@@ -23,7 +23,7 @@ resource "aws_subnet" "public" {
   availability_zone       = "${data.aws_region.current.name}a"
 
   tags = {
-    Name = "terra-shared-public-subnet"
+    Name = "terra-infrastructure-public-subnet"
   }
 }
 
@@ -36,7 +36,7 @@ resource "aws_route_table" "public" {
   }
 
   tags = {
-    Name = "terra-shared-public-rt"
+    Name = "terra-infrastructure-public-rt"
   }
 }
 

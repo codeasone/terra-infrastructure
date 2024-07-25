@@ -1,9 +1,9 @@
 terraform {
   backend "s3" {
     bucket         = "codeasone-infrastructure"
-    key            = "terraform-shared.tfstate"
+    key            = "terraform-infrastructure.tfstate"
     region         = "eu-west-1"
-    dynamodb_table = "terraform-shared-tfstate"
+    dynamodb_table = "terraform-infrastructure-tfstate"
     profile        = "codeasone"
   }
 }
